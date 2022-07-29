@@ -5,8 +5,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
-import br.com.caelum.produtos.modelo.Produto;
-import br.com.caelum.produtos.modelo.Usuario;
+import br.com.alura.product_control.model.Product;
+import br.com.alura.product_control.model.User;
 
 public class HibernateUtil {
 
@@ -15,10 +15,10 @@ public class HibernateUtil {
 	static {
 
 		AnnotationConfiguration configuration = new AnnotationConfiguration();
-		configuration.addAnnotatedClass(Produto.class);
-		configuration.addAnnotatedClass(Usuario.class);
+		configuration.addAnnotatedClass(Product.class);
+		configuration.addAnnotatedClass(User.class);
 		sessionFactory = configuration.buildSessionFactory();
-		new SchemaExport(configuration).create(true, false);
+		new SchemaExport().create(true, false);
 
 	}
 

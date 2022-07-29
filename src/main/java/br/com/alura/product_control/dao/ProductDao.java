@@ -5,7 +5,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import br.com.caelum.produtos.modelo.Produto;
+import br.com.alura.product_control.model.Product;
 
 public class ProductDao {
 
@@ -15,27 +15,27 @@ public class ProductDao {
 		this.session = new HibernateUtil().openSession();
 	}
 
-	public void adiciona(Produto p) {
+	public void adiciona(Product p) {
 		Transaction tx = session.beginTransaction();
 		session.save(p);
 		tx.commit();
 	}
 
-	public void atualiza(Produto p) {
+	public void atualiza(Product p) {
 		Transaction tx = session.beginTransaction();
 		session.update(p);
 		tx.commit();
 	}
 
-	public void remove(Produto p) {
+	public void remove(Product p) {
 		Transaction tx = session.beginTransaction();
 		session.delete(p);
 		tx.commit();
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Produto> lista() {
-		return session.createCriteria(Produto.class).list();
+	public List<Product> lista() {
+		return session.createCriteria(Product.class).list();
 	}
 
 }
