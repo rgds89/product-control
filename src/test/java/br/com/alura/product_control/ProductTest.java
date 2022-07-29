@@ -1,4 +1,4 @@
-package br.com.alura.store;
+package br.com.alura.product_control;
 
 import static org.junit.Assert.*;
 
